@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo04o0my43blx"]
+
+[ext_resource type="Script" path="res://scenes/rintangan_ikan.gd" id="1_u6fpm"]
+[ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="2_6mf0x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdqjo"]
+radius = 18.0
+height = 36.0
+
+[node name="IkanJatuh" type="RigidBody2D"]
+collision_layer = 4
+script = ExtResource("1_u6fpm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6mf0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_sdqjo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

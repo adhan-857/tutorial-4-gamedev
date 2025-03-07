@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1wlhtd2nl1qa"]
+
+[ext_resource type="Script" path="res://scenes/rintangan_level2.gd" id="1_qcq4c"]
+[ext_resource type="Texture2D" uid="uid://dvv3mspleuvvy" path="res://assets/kenney_platformerpack/PNG/Enemies/saw.png" id="2_fwggn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdqjo"]
+radius = 18.0
+height = 39.3333
+
+[node name="FallingSaw" type="RigidBody2D"]
+collision_layer = 4
+script = ExtResource("1_qcq4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fwggn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.32, 3)
+shape = SubResource("CapsuleShape2D_sdqjo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

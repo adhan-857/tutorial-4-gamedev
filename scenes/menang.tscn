@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1inpgaw4wtgq"]
+
+[ext_resource type="Script" path="res://scenes/menang.gd" id="1_lebxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdv5l"]
+size = Vector2(567, 316)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_lebxd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(273.5, 148)
+shape = SubResource("RectangleShape2D_wdv5l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

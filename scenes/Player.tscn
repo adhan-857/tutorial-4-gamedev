@@ -62,6 +62,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 6
 script = ExtResource("1_xsgpf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -78,3 +79,6 @@ frame = 2
 libraries = {
 "": SubResource("AnimationLibrary_sbh6e")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(2, 2)
