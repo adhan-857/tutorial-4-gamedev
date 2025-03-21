@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://yqmk0vpvnyxr"]
+[gd_scene load_steps=13 format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_46wrk"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://8p4i4i50yqj0" path="res://scenes/kalah.tscn" id="6_jahhp"]
 [ext_resource type="Script" path="res://scenes/spawner.gd" id="7_fihvn"]
 [ext_resource type="PackedScene" uid="uid://bo04o0my43blx" path="res://scenes/RintanganIkan.tscn" id="8_x88nv"]
+[ext_resource type="PackedScene" uid="uid://bp03iikq6n2v4" path="res://scenes/LifeCounter.tscn" id="9_7cjcv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fiwrq"]
 texture = ExtResource("2_46wrk")
@@ -81,6 +82,15 @@ sources/1 = SubResource("TileSetAtlasSource_14ivx")
 [node name="Level1" type="Node2D"]
 position = Vector2(-371, 13)
 
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 0)
+self_modulate = Color(0, 0, 0, 0)
+offset_left = 753.0
+offset_top = 801.0
+offset_right = 793.0
+offset_bottom = 841.0
+scale = Vector2(77.137, -92.07)
+
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(445, 209)
 collision_layer = 3
@@ -108,3 +118,8 @@ position = Vector2(1240, -510)
 scale = Vector2(5, 1)
 script = ExtResource("7_fihvn")
 obstacle = ExtResource("8_x88nv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("9_7cjcv")]
+metadata/_edit_use_anchors_ = true

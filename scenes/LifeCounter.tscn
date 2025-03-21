@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp03iikq6n2v4"]
+
+[ext_resource type="Script" path="res://scenes/label.gd" id="1_0wkj3"]
+[ext_resource type="FontFile" uid="uid://bm5limolh34o" path="res://assets/Xirod.otf" id="1_sh1eu"]
+
+[node name="GUI" type="MarginContainer"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.954449, 8.49026e-05, 4.31252e-05, 1)
+theme_override_fonts/font = ExtResource("1_sh1eu")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("1_0wkj3")

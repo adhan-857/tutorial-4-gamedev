@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cedqiic8ricwn"]
+
+[ext_resource type="FontFile" uid="uid://cfejcasdeqav1" path="res://assets/good timing bd.otf" id="1_wdsfc"]
+[ext_resource type="FontFile" uid="uid://bm5limolh34o" path="res://assets/Xirod.otf" id="2_43qiu"]
+[ext_resource type="Script" path="res://scenes/link_button.gd" id="3_m16sy"]
+[ext_resource type="Texture2D" uid="uid://bj2aew56l2i28" path="res://assets/kenney_platformerpack/PNG/Players/128x256/Pink/alienPink_front.png" id="4_wtila"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.273374, 0.490281, 1, 1)
+theme_override_fonts/font = ExtResource("1_wdsfc")
+theme_override_font_sizes/font_size = 100
+text = "Alien
+Adventure"
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_43qiu")
+text = "New Game"
+script = ExtResource("3_m16sy")
+scene_to_load = "Level1"
+
+[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_43qiu")
+text = "Choose Level"
+script = ExtResource("3_m16sy")
+scene_to_load = "ChooseLevel"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 350)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_wtila")
+stretch_mode = 5
+flip_h = true
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/LinkButton" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/LinkButton2" method="_on_Choose_Level_pressed"]
